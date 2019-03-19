@@ -2,6 +2,7 @@
 .Python
 env/
 node_modules/
+.vscode/
 build/
 develop-eggs/
 dist/

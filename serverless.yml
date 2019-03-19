@@ -46,17 +46,21 @@ provider:
 #    variable1: value1
 
 # you can add packaging information here
-#package:
+package:
 #  include:
 #    - include-me.py
 #    - include-me-dir/**
-#  exclude:
-#    - exclude-me.py
-#    - exclude-me-dir/**
+   exclude:
+    - env/**
+    - node_modules/**
+    - .requirements.zip
+    - .vscode/**
 
 functions:
-  hello:
-    handler: handler.hello
+  post_user:
+    handler: post_user.post
+  put_user:
+    handler: put_user.put
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
