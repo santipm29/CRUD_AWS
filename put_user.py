@@ -1,4 +1,7 @@
-import json
+import json, os
+
+URL_DB = os.getenv('URL_DB')
+PORT_DB = os.getenv('PORT_DB')
 
 
 def put(event, context):

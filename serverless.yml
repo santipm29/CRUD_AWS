@@ -11,7 +11,7 @@
 #
 # Happy Coding!
 
-service: user # NOTE: update this with your service name
+service: crudaws-mongodb # NOTE: update this with your service name
 
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
@@ -20,6 +20,8 @@ service: user # NOTE: update this with your service name
 provider:
   name: aws
   runtime: python3.7
+  region: us-east-1
+  stage: 
 
 # you can overwrite defaults here
 #  stage: dev
@@ -42,8 +44,9 @@ provider:
 #            - "/*"
 
 # you can define service wide environment variables here
-#  environment:
-#    variable1: value1
+  environment:
+    URL_DB: 52.90.145.195
+    PORT_DB: 27017
 
 # you can add packaging information here
 package:
@@ -59,8 +62,20 @@ package:
 functions:
   post_user:
     handler: post_user.post
+    layers:
+      - {Ref: PythonRequirementsLambdaLayer}
+    events:
+      - http:
+          path: user
+          method: POST
   put_user:
     handler: put_user.put
+    layers:
+      - {Ref: PythonRequirementsLambdaLayer}
+    events:
+      - http:
+          path: user
+          method: PUT
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
@@ -107,6 +122,13 @@ functions:
 #     NewOutput:
 #       Description: "Description for the output"
 #       Value: "Some output value"
+
+
+custom:
+  # ... for the serverless-python-requirements plugin
+  pythonRequirements:
+    dockerizePip: True
+    layer: True
 
 plugins:
   - serverless-python-requirements
