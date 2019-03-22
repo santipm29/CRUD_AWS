@@ -1,7 +1,5 @@
-import json, os
+import json, os, pymongo
 
-URL_DB = os.getenv('URL_DB')
-PORT_DB = os.getenv('PORT_DB')
 
 
 def put(event, context):

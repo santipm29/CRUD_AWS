@@ -1,0 +1,266 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://example.com/root.json",
+    "type": "object",
+    "title": "The Root Schema",
+    "required": [
+      "primerNombre",
+      "segundoNombre",
+      "primerApellido",
+      "segundoApellido",
+      "tipoDocumento",
+      "documentoIdentidad",
+      "correoElectronico",
+      "estadoCivil",
+      "genero",
+      "edad",
+      "datosNacimiento",
+      "direccion",
+      "telefono"
+    ],
+    "properties": {
+      "primerNombre": {
+        "$id": "#/properties/primerNombre",
+        "type": "string",
+        "title": "The Primernombre Schema",
+        "default": "",
+        "examples": [
+          "Camila"
+        ],
+        "minLength": 1,
+        "pattern": "^(.*)$"
+      },
+      "segundoNombre": {
+        "$id": "#/properties/segundoNombre",
+        "type": "string",
+        "title": "The Segundonombre Schema",
+        "default": "",
+        "examples": [
+          ""
+        ],
+        "pattern": "^(.*)$"
+      },
+      "primerApellido": {
+        "$id": "#/properties/primerApellido",
+        "type": "string",
+        "title": "The Primerapellido Schema",
+        "default": "",
+        "examples": [
+          "Restrepo"
+        ],
+        "minLength": 1,
+        "pattern": "^(.*)$"
+      },
+      "segundoApellido": {
+        "$id": "#/properties/segundoApellido",
+        "type": "string",
+        "title": "The Segundoapellido Schema",
+        "default": "",
+        "examples": [
+          ""
+        ],
+        "pattern": "^(.*)$"
+      },
+      "tipoDocumento": {
+        "$id": "#/properties/tipoDocumento",
+        "type": "string",
+        "title": "The Tipodocumento Schema",
+        "default": "",
+        "examples": [
+          "cc"
+        ],
+        "minLength": 1,
+        "pattern": "^(.*)$"
+      },
+      "documentoIdentidad": {
+        "$id": "#/properties/documentoIdentidad",
+        "type": "string",
+        "title": "The Documentoidentidad Schema",
+        "default": "",
+        "examples": [
+          "1020304050"
+        ],
+        "minLength": 1,
+        "pattern": "^(.*)$"
+      },
+      "correoElectronico": {
+        "$id": "#/properties/correoElectronico",
+        "type": "string",
+        "title": "The Correoelectronico Schema",
+        "default": "",
+        "examples": [
+          "camilar@gmail.com"
+        ],
+        "minLength": 1,
+        "pattern": "^(.*)$"
+      },
+      "estadoCivil": {
+        "$id": "#/properties/estadoCivil",
+        "type": "string",
+        "title": "The Estadocivil Schema",
+        "default": "",
+        "examples": [
+          "soltera"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "genero": {
+        "$id": "#/properties/genero",
+        "type": "string",
+        "title": "The Genero Schema",
+        "default": "",
+        "examples": [
+          "F"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "edad": {
+        "$id": "#/properties/edad",
+        "type": "integer",
+        "title": "The Edad Schema",
+        "default": 0,
+        "examples": [
+          21
+        ]
+      },
+      "datosNacimiento": {
+        "$id": "#/properties/datosNacimiento",
+        "type": "object",
+        "title": "The Datosnacimiento Schema",
+        "required": [
+          "fecha",
+          "pais",
+          "departamento",
+          "ciudad"
+        ],
+        "properties": {
+          "fecha": {
+            "$id": "#/properties/datosNacimiento/properties/fecha",
+            "type": "string",
+            "title": "The Fecha Schema",
+            "default": "",
+            "examples": [
+              "1997/06/21"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "pais": {
+            "$id": "#/properties/datosNacimiento/properties/pais",
+            "type": "string",
+            "title": "The Pais Schema",
+            "default": "",
+            "examples": [
+              "colombia"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "departamento": {
+            "$id": "#/properties/datosNacimiento/properties/departamento",
+            "type": "string",
+            "title": "The Departamento Schema",
+            "default": "",
+            "examples": [
+              "antioquia"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "ciudad": {
+            "$id": "#/properties/datosNacimiento/properties/ciudad",
+            "type": "string",
+            "title": "The Ciudad Schema",
+            "default": "",
+            "examples": [
+              "rionegro"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      },
+      "direccion": {
+        "$id": "#/properties/direccion",
+        "type": "array",
+        "title": "The Direccion Schema",
+        "items": {
+          "$id": "#/properties/direccion/items",
+          "type": "object",
+          "title": "The Items Schema",
+          "required": [
+            "tipo",
+            "direccion",
+            "codigoPostal"
+          ],
+          "minLength": 1,
+          "properties": {
+            "tipo": {
+              "$id": "#/properties/direccion/items/properties/tipo",
+              "type": "string",
+              "title": "The Tipo Schema",
+              "default": "",
+              "examples": [
+                "residencia"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "direccion": {
+              "$id": "#/properties/direccion/items/properties/direccion",
+              "type": "string",
+              "title": "The Direccion Schema",
+              "default": "",
+              "examples": [
+                "calle20c #34-50"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "codigoPostal": {
+              "$id": "#/properties/direccion/items/properties/codigoPostal",
+              "type": "string",
+              "title": "The Codigopostal Schema",
+              "default": "",
+              "examples": [
+                ""
+              ],
+              "pattern": "^(.*)$"
+            }
+          }
+        }
+      },
+      "telefono": {
+        "$id": "#/properties/telefono",
+        "type": "array",
+        "title": "The Telefono Schema",
+        "items": {
+          "$id": "#/properties/telefono/items",
+          "type": "object",
+          "title": "The Items Schema",
+          "required": [
+            "tipo",
+            "numero"
+          ],
+          "minLength": 1,
+          "properties": {
+            "tipo": {
+              "$id": "#/properties/telefono/items/properties/tipo",
+              "type": "string",
+              "title": "The Tipo Schema",
+              "default": "",
+              "examples": [
+                "fijo"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "numero": {
+              "$id": "#/properties/telefono/items/properties/numero",
+              "type": "string",
+              "title": "The Numero Schema",
+              "default": "",
+              "examples": [
+                "2222222"
+              ],
+              "pattern": "^(.*)$"
+            }
+          }
+        }
+      }
+    }
+  }

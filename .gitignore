@@ -2,6 +2,8 @@
 .Python
 env/
 node_modules/
+__pycache__
+mensaje.json
 .vscode/
 build/
 develop-eggs/

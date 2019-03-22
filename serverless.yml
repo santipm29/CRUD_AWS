@@ -21,11 +21,8 @@ provider:
   name: aws
   runtime: python3.7
   region: us-east-1
-  stage: 
+  stage: dev
 
-# you can overwrite defaults here
-#  stage: dev
-#  region: us-east-1
 
 # you can add statements to the Lambda function's IAM Role here
 #  iamRoleStatements:
@@ -44,9 +41,9 @@ provider:
 #            - "/*"
 
 # you can define service wide environment variables here
-  environment:
-    URL_DB: 52.90.145.195
-    PORT_DB: 27017
+#  environment:
+#    URL_DB: 52.90.145.195
+#    PORT_DB: 27017
 
 # you can add packaging information here
 package:
@@ -54,6 +51,7 @@ package:
 #    - include-me.py
 #    - include-me-dir/**
    exclude:
+    - __pycache__
     - env/**
     - node_modules/**
     - .requirements.zip
