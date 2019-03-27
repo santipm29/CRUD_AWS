@@ -66,14 +66,50 @@ functions:
       - http:
           path: user
           method: POST
+          cors: true
+  get_user:
+    handler: get_user.get
+    layers:
+      - {Ref: PythonRequirementsLambdaLayer}
+    events:
+      - http:
+          path: user
+          method: GET
+      - http:
+          path: user/{id}
+          method: GET
+          cors: true
+          request:
+            parameters:
+              paths:
+                id: false          
   put_user:
     handler: put_user.put
     layers:
       - {Ref: PythonRequirementsLambdaLayer}
     events:
       - http:
-          path: user
+          path: user/{id}
           method: PUT
+          cors: true
+          request:
+            parameters:
+              paths:
+                id: True        
+  delete_user:
+    handler: delete_user.delete
+    layers:
+      - {Ref: PythonRequirementsLambdaLayer}
+    events:
+      - http:
+          path: user/{id}
+          method: DELETE
+          cors: true
+          request:
+            parameters:
+              paths:
+                id: true
+          
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
@@ -125,7 +161,7 @@ functions:
 custom:
   # ... for the serverless-python-requirements plugin
   pythonRequirements:
-    dockerizePip: True
+    #dockerizePip: True
     layer: True
 
 plugins:

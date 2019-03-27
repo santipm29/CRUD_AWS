@@ -129,13 +129,13 @@
         "type": "object",
         "title": "The Datosnacimiento Schema",
         "required": [
-          "fecha",
+          "fechaNacimiento",
           "pais",
           "departamento",
           "ciudad"
         ],
         "properties": {
-          "fecha": {
+          "fechaNacimiento": {
             "$id": "#/properties/datosNacimiento/properties/fecha",
             "type": "string",
             "title": "The Fecha Schema",

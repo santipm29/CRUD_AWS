@@ -16,3 +16,9 @@ pip install -r requirements.txt
 ```bash
 npm install 
 ```
+
+## Deploy
+
+```bash
+serverless deploy 
+```
