@@ -56,10 +56,11 @@ package:
     - node_modules/**
     - .requirements.zip
     - .vscode/**
+    - requirements.txt
 
 functions:
   post_user:
-    handler: post_user.post
+    handler: user/post_user.post
     layers:
       - {Ref: PythonRequirementsLambdaLayer}
     events:
@@ -68,7 +69,7 @@ functions:
           method: POST
           cors: true
   get_user:
-    handler: get_user.get
+    handler: user/get_user.get
     layers:
       - {Ref: PythonRequirementsLambdaLayer}
     events:
@@ -84,7 +85,7 @@ functions:
               paths:
                 id: false          
   put_user:
-    handler: put_user.put
+    handler: user/put_user.put
     layers:
       - {Ref: PythonRequirementsLambdaLayer}
     events:
@@ -97,7 +98,7 @@ functions:
               paths:
                 id: True        
   delete_user:
-    handler: delete_user.delete
+    handler: user/delete_user.delete
     layers:
       - {Ref: PythonRequirementsLambdaLayer}
     events:

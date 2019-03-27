@@ -1,4 +1,5 @@
-import json, mongo
+import json
+from user import mongo
 from jsonschema import Draft4Validator
 
 def load_file(name):
@@ -21,7 +22,7 @@ def beautify(path, instance, message, validator_value):
         return message
 
 def validate(message):
-    SCHEMA = load_file('jsonschema.json')
+    SCHEMA = load_file('validation/jsonschema.json')
     v = Draft4Validator(SCHEMA)
     errors = []
     for error in sorted(v.iter_errors(message), key=str):

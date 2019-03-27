@@ -1,4 +1,5 @@
-import json, mongo
+import json
+from user import mongo
 
 def put(event, context):
     body = {

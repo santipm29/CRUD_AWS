@@ -1,6 +1,7 @@
-import json, mongo
+import json
+from user import mongo
 
-def get(event, context):
+def delete(event, context):
     parameter = False
     try:
         id = event["pathParameters"]["id"]
@@ -9,10 +10,9 @@ def get(event, context):
         print("Error: ", e)
 
     if parameter:
-        res = mongo.getUser("user", id)
+        res = mongo.delete("user", id)
     else:
-        res = mongo.getUsers("user")
+        res = {"mensaje" : "No se recibio el id del usuario"}
  
     response = {"statusCode": 200, "body": json.dumps( res )}       
     return response
-
