@@ -1,2 +1,5 @@
 pymongo
 jsonschema
+requests
+requests_aws4auth
+pytz
