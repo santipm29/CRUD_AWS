@@ -30,15 +30,6 @@ def validate(message):
         
     return errors
 
-def sendS3(message):
-    id =  uuid.uuid4()
-    s3 = boto3.client('s3')
-    message['_id'] = str(message['_id'])
-    response = s3.put_object(
-        Bucket = 'tallerawsclientes',
-        Key=f'{id}.json',
-        Body = json.dumps(message)  
-    )
 
 def post(event, context):
     body = json.loads(event["body"])
@@ -46,7 +37,6 @@ def post(event, context):
     resp = []
     if not errors:
         resp.append(mongo.insert("user", body))
-        sendS3(body)
     else:
         resp.append(errors)
             
