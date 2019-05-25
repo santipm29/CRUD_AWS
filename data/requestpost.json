@@ -1,0 +1,42 @@
+{
+  "primerNombre": "Camila",
+  "segundoNombre": "",
+  "primerApellido": "Restrepo",
+  "segundoApellido": "",
+  "tipoDocumento": "cc",
+  "documentoIdentidad": "1020304050",
+  "correoElectronico": "camilar@gmail.com",
+  "estadoCivil": "soltera",
+  "genero": "F",
+  "edad" : 21,
+  "datosNacimiento": {
+      "fecha": "1997/06/21",
+      "pais": "colombia",
+      "departamento": "antioquia",
+      "ciudad": "rionegro"
+  },
+  "direccion": [{
+          "tipo": "residencia",
+          "direccion": "calle20c #34-50",
+          "codigoPostal": ""
+      },
+      {
+          "tipo": "oficina",
+          "direccion": "calle30c #67-50",
+          "codigoPostal": ""
+      }
+  ],
+  "telefono": [{
+          "tipo": "fijo",
+          "numero": "2222222"
+      },
+      {
+          "tipo": "celular",
+          "numero": "3102222230"
+      },
+      {
+          "tipo": "oficina",
+          "numero": "5306030"
+      }
+  ]
+}

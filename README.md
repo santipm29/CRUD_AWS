@@ -19,7 +19,7 @@ npm install
 ## Invoke local
 
 ```bash
-serverless invoke local --function functionName 
+serverless invoke local --function functionName --path data/dataescape.json
 ```
 
 ## Deploy to AWS

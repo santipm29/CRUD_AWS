@@ -135,7 +135,7 @@
           "ciudad"
         ],
         "properties": {
-          "fechaNacimiento": {
+          "fecha": {
             "$id": "#/properties/datosNacimiento/properties/fecha",
             "type": "string",
             "title": "The Fecha Schema",
